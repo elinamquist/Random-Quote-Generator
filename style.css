@@ -1,0 +1,92 @@
+
+#body {
+  background-color: #AA7C58;
+  color: #333;
+  font-weight:400;
+  font-size: 60%;
+}
+.polaroid {
+  border-radius:3px;
+ min-height: 50px;
+  margin:5% auto auto auto;
+  width:450px;
+  padding: 10px;
+  background-color:#fff;
+  }
+  .fade{
+  animation: fade-in 1.5s  ease-in-out forwards;
+  }
+  .polaroid-image-container{
+  	width: 90%;
+  	margin: auto;
+  	padding: 0;
+  }
+  .polaroid-image-container img{
+  	width: 100%;
+  }
+  .polaroid-quote-container p{
+  	font-size: 1.9em;
+  	margin-top: 20px;
+  	text-align: center;
+  	color:#053F6A;
+
+  	text-transform: capitalize;
+  }
+  .quote-author {
+   font-size: 1.9em;
+    text-align:right;
+  	color:#053F6A;
+    font-weight: bold;
+  }
+  .buttons {
+  	
+  }
+   .button {
+  height: 38px;
+  border: none;
+  border-radius: 3px;
+  color: #000;
+  background-color: #fff;
+  outline: none;
+  font-size: 2em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 30px;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+ .button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+.footer {
+	color: #fff;
+	font-size: 2em;
+}
+@keyframes fade-in{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@media screen and ( max-width: 768.44px){
+	.polaroid {
+		width: 100%;
+		 margin-top: 10%;
+	}
+	.polaroid-image-container{
+  	width: 100%;
+  	margin: auto;
+  	padding: 0;
+  }
+  .buttons {
+  	position:relative;
+  	margin: 7%;
+  }
+  #new{
+  	margin-top: 5%;
+  }
+  
+}
