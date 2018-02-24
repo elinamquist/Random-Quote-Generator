@@ -73,5 +73,11 @@ $("#newQuotes").on("click",function(){
 		 },1500);
 	}
 	});
-	
+
+// Tweet out quote
+	$("#twitter").on("click",function(){
+		var tweetQuotes=$('.quote').text();
+		var tweetAuthor=$('#author').text();
+		window.open("http://www.twitter.com/intent/tweet?text="+tweetQuotes+" by "+tweetAuthor);
+	})
 });
