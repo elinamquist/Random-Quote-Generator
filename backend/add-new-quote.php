@@ -1,5 +1,5 @@
 <?php
-$jsonFile = 'js/primary-quotes.json';
+$jsonFile = '../js/primary-quotes.json';
 $quotes = json_decode(file_get_contents($jsonFile), true);
 $newData = [
         "img" => "someimgae",
