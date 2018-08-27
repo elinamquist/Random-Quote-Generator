@@ -5,12 +5,12 @@ $("document").ready(function () {
 
 	// Get primary and secondary quotes
 	setTimeout(function() {
-		$.get('js/primary-quotes.json', function (data) {
+		$.get('storage/primary-quotes.json', function (data) {
 			quotes = data;
 			range = quotes.length;
 		});
 
-		$.get('js/secondary-quotes.json', function (data) {
+		$.get('storage/secondary-quotes.json', function (data) {
 			secondaryQuotes = data;
 		});
 	}, 1000);
