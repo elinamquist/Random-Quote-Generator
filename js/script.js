@@ -20,6 +20,7 @@ $("document").ready(function () {
 
 		$("#body").addClass("fade");
 		$(".quote-image").attr("src", storage[quoteNumber].img);
+		$('.quote-image').attr('alt', 'Photo of ' + storage[quoteNumber].author);
 		$("#author").text(storage[quoteNumber].author);
 		$(".quote").text(storage[quoteNumber].quote);
 		$("#body").css("background-color", storage[quoteNumber].bgColor);
