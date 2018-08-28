@@ -1,13 +1,12 @@
 $("document").ready(function () {
-	let quotes;
-	let secondaryQuotes;
-	let range;
+	let mainQuotes, secondaryQuotes, range;
 
-	// Get primary and secondary quotes
+	// Wait for 1 sec after the window and DOM have finished
+	// loading, then fetch the quotes using an ajax call.
 	setTimeout(function() {
 		$.get('storage/primary-quotes.json', function (data) {
-			quotes = data;
-			range = quotes.length;
+			mainQuotes = data;
+			range = mainQuotes.length;
 		});
 
 		$.get('storage/secondary-quotes.json', function (data) {
@@ -16,33 +15,34 @@ $("document").ready(function () {
 	}, 1000);
 
 
-	// click event to generate random quotes from the quotes array
+	function useQuoteFrom(storage, quoteNumber) {
+		quoteNumber =  quoteNumber === undefined ? 0 : quoteNumber;
+
+		$("#body").addClass("fade");
+		$(".quote-image").attr("src", storage[quoteNumber].img);
+		$("#author").text(storage[quoteNumber].author);
+		$(".quote").text(storage[quoteNumber].quote);
+		$("#body").css("background-color", storage[quoteNumber].bgColor);
+
+		setTimeout(function () {
+			$("#body").removeClass("fade");
+		}, 1500);
+	}
+
+	// Click event to generate random quotes from the quotes array
 	$("#newQuotes").on("click", function () {
-		var image = $(".quote-image").attr("src");				//get the value of the quote-image container.
-		var randomNum = Math.floor(Math.random() * range);		//generates the random number
+		// Get the value of the quote-image container.
+		var currentImage = $(".quote-image").attr("src");
 
-		//check to see if random image already exist,if so it replaces it with a different image.
-		if (image === quotes[randomNum].img) {
-			$("#body").addClass("fade");
-			$(".quote-image").attr("src", secondaryQuotes[0].img);
-			$("#author").text(secondaryQuotes[0].author);
-			$(".quote").text(secondaryQuotes[0].quote);
-			$("#body").css("background-color", secondaryQuotes[0].bgColor);
+		//Get the random number
+		var randomNum = Math.floor(Math.random() * range);
 
-			setTimeout(function () {
-				$("#body").removeClass("fade");
-			}, 1500);
+		//check to see if random image already exist,
+		//if so it replaces it with a different image.
+		if (currentImage === mainQuotes[randomNum].img) {
+			useQuoteFrom(secondaryQuotes);
 		} else {
-			$("#body").addClass("fade");
-			$(".quote-image").attr("src", quotes[randomNum].img);
-			$(".quote").text(quotes[randomNum].quote);
-			$("#author").text(quotes[randomNum].author);
-			$("#body").css("background-color", quotes[randomNum].bgColor);
-
-			//wait for 1.5s before remove the fade class from the body
-			setTimeout(function () {
-				$("#body").removeClass("fade");
-			}, 1500);
+			useQuoteFrom(mainQuotes, randomNum);
 		}
 	});
 
