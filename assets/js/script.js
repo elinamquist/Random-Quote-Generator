@@ -15,6 +15,8 @@ $("document").ready(function () {
 	}, 1000);
 
 
+	// This function fetches a random quote from the storage
+	// when the user clicks on the new quote button
 	function useQuoteFrom(storage, quoteNumber) {
 		quoteNumber =  quoteNumber === undefined ? 0 : quoteNumber;
 
