@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!--  Meta  -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
-  <link rel="stylesheet" type="text/css" href="style.css">
- 
-  <title>Random Quotes Generator</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<title>Random Quotes Generator</title>
 </head>
 <body id="body">
-<div class="container-fluid">
-	<div class=" text-center">
-		<div class="polaroid">
-			<div class="polaroid-image-container">
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStzZTll5FV7Z1RSVEd3S5CrT2pn5U4Ci27DXWmyc9vAdpUzPyc" class="quote-image img-responsive" >
+	<div class="container-fluid">
+		<div class=" text-center">
+			<div class="polaroid">
+				<div class="polaroid-image-container">
+					<img src="assets/images/blitz.jpg" class="quote-image img-responsive">
+				</div>
+				<div class="polaroid-quote-container">
+					<p class="quote">Success means nothing when you lose dedication.</p>
+					<div class="quote-author">-
+						<span id="author">Blits The Ambassador</span>
+					</div>
+				</div>
 			</div>
-			<div class="polaroid-quote-container">
-			    <p class="quote">Success means nothing when you lose dedication.</p>
-				<div class="quote-author">- <span id="author">Blits The Ambassador</span></div>
+			<div class="row buttons">
+				<div class="col-md-6">
+					<a class="button" id="twitter">Tweet Quote</a>
+				</div>
+				<div class="col-md-6" id="new">
+					<a class="button" id="newQuotes">New Quote</a>
+				</div>
 			</div>
+			<h3 class="footer">By Elinam Quist</h3>
 		</div>
-       <div class="row buttons">
- 			<div class="col-md-6">
- 			   <a class="button" id="twitter">Tweet Quote</a>	
- 			 </div>
- 			 <div class="col-md-6" id="new">
- 			   <a class="button" id="newQuotes">New Quote</a>		
- 			  </div>
- 	    </div>
- 	    <h3 class="footer">By Elinam Quist</h3>
 	</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 </html>
